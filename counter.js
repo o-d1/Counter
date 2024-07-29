@@ -1,32 +1,28 @@
-const decrease = document.getElementById('decrease');
-decrease.addEventListener('click', decreaseFunction);
-
-const reset = document.getElementById('reset');
-reset.addEventListener('click', resetFunction);
-
-const increase = document.getElementById('increase');
-increase.addEventListener('click', increaseFunction);
-
 let userInput = document.getElementById('input');
 
-
-function decreaseFunction () {
+const decrease = document.getElementById('decrease');
+decrease.addEventListener('click', () => {
     userInput.value = parseFloat(userInput.value) - 1;
-}
+    if (userInput.value == 'NaN' || userInput.value == '') {
+        userInput.value = '';
+        document.getElementById('error').innerHTML = "ERROR! No number detected";
+        setTimeout(() => {
+            document.getElementById('error').innerHTML = "";
+        }, 1000)
+    } 
+})
 
-function increaseFunction () {
+const reset = document.getElementById('reset');
+reset.addEventListener('click', () => userInput.value = "");
+
+const increase = document.getElementById('increase');
+increase.addEventListener('click', () => {
     userInput.value = parseFloat(userInput.value) + 1;
-}
-
-function resetFunction () {
-    userInput.value = "";
-} 
-/*                                Was trying to make it into one function
-function buttonClciked () {
-    let userInput = document.getElementById('input');
-
-    if (increase.addEventListener('click')) {
-        userInput.value = parseFloat(userInput.value) + 1;
+    if (userInput.value == 'NaN' || userInput.value == '') {
+        userInput.value = '';
+        document.getElementById('error').innerHTML = "ERROR! No number detected"
+        setTimeout(() => {
+            document.getElementById('error').innerHTML = ""
+        }, 1000)
     }
-}
-*/
+});
