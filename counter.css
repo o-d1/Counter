@@ -1,1 +1,23 @@
-
+#input {
+    height: 15em;
+    width: 15em;
+    margin: 40vh auto;
+    display: flex;
+    font-size: 5em;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 2rem; 
+}
+html, body {
+    height: 100%
+}
+button {
+    font-size: 1.3rem;
+    border-radius: 0.5em;
+    border-color: black;
+    border-style: solid;
+}
